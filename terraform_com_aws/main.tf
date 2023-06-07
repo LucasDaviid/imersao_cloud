@@ -34,3 +34,5 @@ resource "aws_s3_bucket_public_access_block" "s3_block" {
     restrict_public_buckets = true
 }
 
+# Subimos o arquivo atualizado
+# Comandos aplicados -> terraform plan / terraform apply
