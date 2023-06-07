@@ -24,3 +24,13 @@ resource "aws_s3_bucket" "s3_bucket" {
 #   terraform init - Provisiona a estrutura no CloudShell
 #   terraform plan - Compara o arquivo com o state file e com base nisso informa o que o terraform ira fazer na nuvem
 #   terraform apply - Confirma o que será aplicado na nuvem
+
+resource "aws_s3_bucket_public_access_block" "s3_block" {
+    bucket = aws_s3_bucket.s3_bucket.id # Referenciamos a bucket que acabamos de criar
+    
+    block_public_acls = true
+    block_public_policy = true
+    ignore_public_acls = true
+    restrict_public_buckets = true
+}
+
